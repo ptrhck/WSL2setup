@@ -110,8 +110,7 @@ function Select-Distro () {
     $distrolist = (
         [PSCustomObject]@{
             'Name' = 'Ubuntu 20.04'
-            'StoreLink' = 'https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71'
-            'URI' = ''
+            'URI' = ''URI' = 'https://aka.ms/wslubuntu2004''
             'AppxName' = 'CanonicalGroupLimited.Ubuntu20.04onWindows'
             'winpe' = 'ubuntu2004.exe'
             'installed' = $false
@@ -185,7 +184,7 @@ function Select-Distro () {
     $distrolist | ForEach-Object { $_.installed = Get-WSLExistance($_) }
     Write-Host("+------------------------------------------------+")
     Write-Host("| Choose your Distro                             |")
-    Write-Host("| Ubuntu 18.04 is recommended for Docker on WSL2 |")
+    Write-Host("| Ubuntu 20.04 is recommended for Docker on WSL2 |")
     Write-Host("+------------------------------------------------+")
     For ($i = 0; $i -le ($distrolist.Length - 1); $i++) {
         $installedTxt = ""
