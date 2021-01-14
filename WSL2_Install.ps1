@@ -110,7 +110,7 @@ function Select-Distro () {
     $distrolist = (
         [PSCustomObject]@{
             'Name' = 'Ubuntu 20.04'
-            'URI' = ''URI' = 'https://aka.ms/wslubuntu2004''
+            'URI' = 'https://aka.ms/wslubuntu2004'
             'AppxName' = 'CanonicalGroupLimited.Ubuntu20.04onWindows'
             'winpe' = 'ubuntu2004.exe'
             'installed' = $false
