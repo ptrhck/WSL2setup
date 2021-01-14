@@ -273,3 +273,11 @@ if ($rebootRequired) {
         }
     }
 }
+
+Write-Host("Creating desktop shortcut for your Linux home folder...")
+$objShell = New-Object -ComObject ("WScript.Shell")
+$objShortCut = $objShell.CreateShortcut($env:USERPROFILE + "\Desktop" + "\Ubuntu.lnk")
+$username = $env:USERNAME.ToLower()
+$objShortCut.TargetPath="\\wsl$\Ubuntu-20.04\home\" + $username
+$objShortCut.Save()
+
